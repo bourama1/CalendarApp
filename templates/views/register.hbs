@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+        integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+
+    <title>Calendar</title>
+</head>
+<body>
+    {{>header}}
+    
+    <main id="content">
+        <div class="container col-sm-8 col-md-8 col-lg-8 mt-5">
+            <div class="card">
+                <h3 class="card-header">Sign up please</h3>
+                <div class="form-group">
+                <form action="/register" method="POST">
+                    <label for="email">Email:</label><br>
+                    <input class="form-control" type="email" name="email" id="email" required>
+
+                    <label for="password">Password:</label><br>
+                    <input class="form-control" type="password" name="password" id="password"  required>
+                    <small class="form-text text-muted">At least 8 characters with one digit, uppercase and lowercase</small><br><br>
+
+                    <button class="btn btn-outline-primary" type="submit">Sign up</button>
+                </form>
+                </div>
+                <p>{{errorMessage}}</p>
+            </div>
+        </div>
+    </main>
+    
+    {{>footer}}
+</body>
+</html>

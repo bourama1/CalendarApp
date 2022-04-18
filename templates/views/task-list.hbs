@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+        integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    
+    <title>Calendar</title>
+</head>
+<body>
+    {{>header}}
+    
+    <main id="content">
+        <div class="container col-sm-8 col-md-8 col-lg-8 mt-5">
+            <div class="card">
+                <h3 class="card-header" >You have {{tasks.length}} tasks.</h3>
+                <table class="table table-bordered table-responsive-sm">
+                    <thead class="thead-dark">
+                    <tr>
+                        <th>Task</th>
+                        <th>Date</th>
+                        <th>Description</th>
+                        <th>Completed</th>
+                        <th>Priority</th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                        {{#each tasks}}
+                        <tr>
+                            <td>
+                                <a href={{this.url}}>{{this.title}}</a><span> 
+                            </td>
+                            <td>
+                                {{this.date}} 
+                            </td>
+                            <td>
+                                {{this.description}} 
+                            </td>
+                            <td>
+                                {{this.completed}} 
+                            </td>
+                            <td>
+                                {{this.priority}} 
+                            </td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+                <div class="form-inline">
+                    <a class="btn btn-outline-primary col-sm-12" href="/tasks/create">Create task</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    {{>footer}}
+    
+</body>
+</html>

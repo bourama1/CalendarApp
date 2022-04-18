@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+        integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    
+    <title>Calendar</title>
+</head>
+<body>
+    {{>header}}
+
+    <main id="content">
+        <div class="container col-sm-8 col-md-8 col-lg-8 mt-5">
+            <div class="card">
+                <h3 class="card-header">Reminder <a href={{reminder.url}}>{{reminder.title}}</a></h3>
+                <div>
+                    <p><h4>Date:</h4> {{reminder.date}}</p>
+                    <p><h4>Read:</h4> {{reminder.read}}</p>
+                    <p><h4>For task:</h4> <a href={{task.url}}>{{task.title}}</a></p>
+                    <p><h4>Task finish date:</h4> {{task.date}}</p>
+                </div>  
+                <hr>
+                <div class="form-inline">
+                    <a  class="btn btn-outline-primary col-sm-4" href={{reminder.url}}/delete>Delete reminder</a> 
+                    <a  class="btn btn-outline-primary col-sm-4" href={{reminder.url}}/update>Update reminder</a> 
+                    <a  class="btn btn-outline-primary col-sm-4" href={{reminder.url}}/read>Confirm reading reminder</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    {{>footer}}
+</body>
+</html>

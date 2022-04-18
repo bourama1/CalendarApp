@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+        integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    
+    <title>Calendar</title>
+</head>
+<body>
+    {{>header}}
+
+    <main id="content">
+        <div class="container col-sm-8 col-md-8 col-lg-8 mt-5">
+            <div class="card">
+                <h3 class="card-header">Delete task <a href={{task.url}}>{{task.title}}</a></h3>
+                <div>
+                <p>Description of task: {{task.description}}</p>
+                
+                </div>  
+                <div class="form-group">
+                <form action="{{task.url}}/delete?_method=DELETE" method="post">
+                    <p><b>Are you sure? This action will also delete all reminders for this task</b></p>
+                    <input type="hidden" id="form-control" name="id" required="true" value={{task._id}}>
+                    <button class="btn btn-outline-primary" type="submit">Delete</button>
+                </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    {{>footer}}
+</body>
+</html>
